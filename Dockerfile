@@ -1,5 +1,7 @@
 FROM ubuntu:bionic
+
 LABEL maintainer="Michael Maffait"
+LABEL org.opencontainers.image.source="https://github.com/Pandemonium1986/docker-ubuntu1804"
 
 # Install dependencies.
 RUN apt-get update && \
@@ -14,6 +16,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
+WORKDIR /
 
 VOLUME ["/sys/fs/cgroup"]
 
